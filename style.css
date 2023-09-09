@@ -10,7 +10,7 @@
   font-family: sans-serif;
   font-size: 22px;
   background-color: peachpuff;
-  color: royalblue;
+  color:white;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
 
 .profile-pics{
   border-radius: 23%;
-  background-color: var(--pink);
+  background-color: white;
   width: 150px;
   margin: 1.3rem 0%;
 }
