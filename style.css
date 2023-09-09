@@ -20,8 +20,8 @@
 
 .inner-container{
   background-color: black;
-  border-radius: 0.625rem;
-  width: 90vmin;
+  border-radius: 32px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@
 }
 
 .profile-pics{
-  border-radius: 23%;
+  border-radius: %;
   background-color: white;
   width: 150px;
   margin: 1.3rem 0%;

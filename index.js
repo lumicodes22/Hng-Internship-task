@@ -1,24 +1,28 @@
-function setDayOfWeek() {
-  const dayOfWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
-  const currentDate = new Date();
-  const options = { weekday: 'long' };
-  const formattedDayOfWeek = currentDate.toLocaleDateString(undefined, options);
-  dayOfWeekElement.textContent = formattedDayOfWeek;
-}
+document.addEventListener("DOMContentLoaded", function() {
+  const currentUTCTimeEl = document.getElementById('currentUTCTime');
+  const currentDayOfTheWeekEl = document.getElementById('currentDayOfTheWeek');
 
-function updateClock() {
-  const timeElement = document.querySelector('[data-testid="currentUTCTime"]');
-  const updateClockDisplay = () => {
-      const currentDate = new Date();
-      const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-      const formattedTime = currentDate.toLocaleTimeString(undefined, options);
-      timeElement.textContent = formattedTime;
-  };
 
-  updateClockDisplay();
+  function updateDateandTime() {
+      const date = new Date();
+      const utcTime = date.getTime();
 
-  setInterval(updateClockDisplay, 1000);
-}
+      //Get the name of the days of the week
+      const daysOfTheWeek = [
+       'Sunday',
+       'Monday',
+       'Tuesday',
+       'Wednesday',
+       'Thursday',
+       'Friday',
+       'Saturday',
+      ];
+      const currentDayOfTheWeek = daysOfTheWeek[date.getUTCDay()];
 
-setDayOfWeek();
-updateClock();
+      currentUTCTimeEl.textContent = utcTime;
+      currentDayOfTheWeekEl.textContent = currentDayOfTheWeek;
+  }
+
+  setInterval(updateDateandTime, 1000);
+  updateDateandTime();
+});
